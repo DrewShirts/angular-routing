@@ -17,7 +17,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
-import { CutomerListComponent } from './cutomer-list/cutomer-list.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -28,7 +28,7 @@ import { MatSortModule } from '@angular/material/sort';
     DashboardComponent,
     CustomerComponent,
     NavComponent,
-    CutomerListComponent
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,

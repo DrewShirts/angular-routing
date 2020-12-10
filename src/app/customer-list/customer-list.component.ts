@@ -2,29 +2,29 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { CutomerListDataSource, CutomerListItem } from './cutomer-list-datasource';
+import { CustomerListDataSource, CustomerListItem } from './customer-list-datasource';
 
 @Component({
-  selector: 'app-cutomer-list',
-  templateUrl: './cutomer-list.component.html',
-  styleUrls: ['./cutomer-list.component.css']
+  selector: 'app-customer-list',
+  templateUrl: './customer-list.component.html',
+  styleUrls: ['./customer-list.component.css']
 })
-export class CutomerListComponent implements AfterViewInit, OnInit {
+export class CustomerListComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatTable) table: MatTable<CutomerListItem>;
-  dataSource: CutomerListDataSource;
+  @ViewChild(MatTable) table: MatTable<CustomerListItem>;
+  dataSource: CustomerListDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name'];
 
   ngOnInit() {
-    this.dataSource = new CutomerListDataSource();
+    this.dataSource = new CustomerListDataSource();
   }
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
+    setTimeout(() => this.dataSource.paginator = this.paginator);
     this.table.dataSource = this.dataSource;
   }
 }
